@@ -1,0 +1,21 @@
+name: Virtual Gym Test
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.10.7
+    - name: Install dependencies
+      run: |
+        make install
+    - name: Format
+      run: |
+        make format
+   
+    - name: Build docker 
+      run: |
+        make build
