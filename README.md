@@ -30,6 +30,11 @@ Vary: Accept
     "result": 9.145244
 }
 ```
+### Tests
+Written a couple of tests
+```bash
+pytest --cov django_test django_test
+```
 
 ## Deployment
 

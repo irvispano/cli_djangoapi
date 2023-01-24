@@ -9,6 +9,9 @@ import json
 @click.option("--json_in", type=click.File("r"))
 @click.option("--target_currency", type=click.STRING)
 def inout(json_in, target_currency):
+    """
+    This script reads a json file and converts the currency to the target currency in stdout
+    """
     
     click.echo("json_in: %s" % json_in)
 

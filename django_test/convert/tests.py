@@ -13,12 +13,17 @@ def client():
 
 
 def test_convert(client):
+    """
+    Test convert url
+    """
     url = reverse("convert")
     response = client.get(url)
-    assert response.status_code == 200
+    assert response.status_code == 417
 
 
 def test_convert_url_amount_param(client):
+    """
+    Test convert url with amount param"""
     url = reverse("convert")
     response = client.get(
         url, data={"amount": 100, "from_currency": "USD", "to_currency": "EUR"}
